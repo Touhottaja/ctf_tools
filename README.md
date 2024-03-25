@@ -42,6 +42,25 @@ $ python3 shellyeah.py -a 127.0.0.1 -p 1234 -s "php exec"
 $ python3 shellyeah.py  # List parameters and available shell commands
 ```
 
+If you want to simplify things:
+```sh
+$ sudo ln -s [<Path to this shellyeah.py>]/shellyeah.py /usr/local/bin/shellyeah
+$ chmod +x shellyeah
+$ shellyeah -h
+ _______________________________________
+< Shell Yeah! - Reverse Shell Generator >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+usage: rev_shell_gen.py [-h] -a ADDRESS -p PORT -s {busybox nc,bash -i,php cmd,php exec,powershell}
+rev_shell_gen.py: error: the following arguments are required: -a/--address, -p/--port, -s/--shell
+```
+
 #### Examples
 ```sh
 $ python3 shellyeah.py -a 1.2.3.4 -p 1234 -s "php exec"
