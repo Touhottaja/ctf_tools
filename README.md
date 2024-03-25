@@ -44,7 +44,7 @@ $ python3 shellyeah.py  # List parameters and available shell commands
 
 If you want to simplify things:
 ```sh
-$ sudo ln -s [<Path to this shellyeah.py>]/shellyeah.py /usr/local/bin/shellyeah
+$ sudo ln -s [<Path to shellyeah.py>]/shellyeah.py /usr/local/bin/shellyeah
 $ chmod +x shellyeah
 $ shellyeah -h
  _______________________________________
